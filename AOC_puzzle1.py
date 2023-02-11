@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Read in the file,give a name to the column and include blank rows
-input_data = pd.read_csv("puzzle1_input.txt", names=["calories"], skip_blank_lines=False)
+input_data = pd.read_csv("inputs/puzzle1_input.txt", names=["calories"], skip_blank_lines=False)
 # print(type(input_data))
 # file is loaded as a DataFrame
 
