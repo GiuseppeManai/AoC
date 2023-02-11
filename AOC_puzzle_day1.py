@@ -1,5 +1,7 @@
 import pandas as pd
 
+# PUZZLE 1
+
 # Read in the file,give a name to the column and include blank rows
 input_data = pd.read_csv("inputs/puzzle1_input.txt", names=["calories"], skip_blank_lines=False)
 # print(type(input_data))
@@ -25,3 +27,11 @@ grouped.rename(columns={'calories':'elf'},inplace=True)
 # Identify which is the row with the max total calories
 max_row = grouped.loc[grouped['tot_calories']==grouped['tot_calories'].max()]
 print('The elf with highest calories is', max_row['elf'].values, 'which has taken',max_row['tot_calories'].values,'calories.')
+
+# PUZZLE 2
+
+# sort current DataFrame based on tot_calories and sum the top three
+grouped.sort_values(by=(['tot_calories']), ascending = False ,inplace = True)
+top_3 = grouped.iloc[:3].sum()
+print(grouped.head())
+print(top_3)
